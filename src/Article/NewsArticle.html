@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+  
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title> News Article</title>
+  <style>.examples_definitionPair__2hj2F {
+    display: flex;
+}
+
+.examples_list__1clvv {
+    display: flex;
+    list-style-type: none;
+}
+.examples_listItem__1ssv7 {
+    margin-right: 1rem;
+}
+
+.examples_section__1yKN- {
+    margin-bottom: 2rem;
+}</style><style>.CSSModule_container__2NIZo {
+    background: red;
+}
+
+.CSSModule_header__48z4M {
+    font-size: 2rem;
+}</style><style>.CSSModule2_container__15L5W {
+    background: blue;
+}
+
+.CSSModule2_header__W1csp {
+    font-size: 2rem;
+}</style><style>@import url(https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap);</style><style>@font-face {
+  font-family: "Rowdies Bold";
+  src: url(/static/media/Rowdies-Bold.3cd3cfa6.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Rowdies Light";
+  src: url(/static/media/Rowdies-Light.e4558190.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Rowdies Regular";
+  src: url(/static/media/Rowdies-Regular.b2a024dc.ttf) format("truetype");
+}
+
+.edgar_page__3ImWR {
+  color: #555;
+  font-family: "Playfair Display", "Garamond", "Times New Roman", Times, serif;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  width: 80vw;
+  line-height: 2;
+  background: repeat-y 100% 0 url(/static/media/raven.94d6cfdd.svg);
+  background-size: 100px;
+}
+
+.edgar_tag__3JMeb {
+  position: fixed;
+  background: red;
+  color: #fff;
+  padding: 1rem;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+}
+
+.edgar_page__3ImWR time {
+  font-family: "Rowdies Bold", serif;
+}
+
+.edgar_page__3ImWR a:hover {
+  font-size: 1.2em;
+}
+.edgar_page__3ImWR *::selection {
+  background: purple;
+  color: yellow;
+}
+
+.edgar_page__3ImWR h1,
+.edgar_page__3ImWR h2,
+.edgar_page__3ImWR h3,
+.edgar_page__3ImWR h4,
+.edgar_page__3ImWR h5,
+.edgar_page__3ImWR h6 {
+  font-family: "UnifrakturMaguntia", cursive;
+}
+
+.edgar_highlighted__35FEM {
+  background: yellow;
+}
+
+.edgar_crazyHighlighted__IG7SL {
+  background: rgba(255, 102, 0, 0.5);
+  text-decoration: wavy green underline;
+}
+
+.edgar_redacted__2KZ76 {
+  background: black;
+  color: black;
+  display: block;
+}
+
+.edgar_strike__3-fQt {
+  text-decoration: wavy black line-through;
+}
+
+.edgar_address__2A74C {
+  border-bottom: 5px double purple;
+  border-top: 5px double purple;
+  font-style: normal;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  text-transform: uppercase;
+}
+
+.edgar_citationPoem__18PwH,
+.edgar_citationStory__2GeRC,
+.edgar_citationArticle__3yA3H {
+  font-style: normal;
+}
+
+.edgar_longQuote__RM02d {
+  color: #000;
+  font-weight: 800;
+  font-style: italic;
+  margin: 0 4rem;
+}
+
+.edgar_longQuote__RM02d::first-line {
+  color: blue;
+}
+
+.edgar_longQuote__RM02d::first-letter {
+  font-size: 5rem;
+}
+
+.edgar_pageChrome__-hYxN {
+  background: linear-gradient(fuchsia, purple);
+  color: #fff;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.edgar_pageChrome__-hYxN a {
+  color: #fff;
+}
+.edgar_pageChrome__-hYxN a:hover {
+  color: violet;
+}
+.edgar_pageChrome__-hYxN a:visited {
+  color: violet;
+}
+.edgar_pageChrome__-hYxN a:active {
+  color: fuchsia;
+}
+
+.edgar_pageSection__3AY3S {
+  padding: 3rem;
+}
+
+@keyframes edgar_appear__DZ1Cg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+   opacity: 1;
+  }
+}
+
+.edgar_pageHeader__2HKcP {
+  animation-name: edgar_appear__DZ1Cg;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+}
+
+.edgar_pageHeader__2HKcP h3 {
+  font-size: 10rem;
+  margin: 0;
+}
+
+.edgar_hidden__3tPOB {
+  visibility: hidden;
+}
+
+.edgar_noDisplay__2n2u1 {
+  display: none;
+}
+
+.edgar_pageHeader__2HKcP ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.edgar_mainNav__3UhB- {
+  overflow: auto;
+}
+
+.edgar_mainNavLinks__1jDLd > li {
+  display: inline;
+}
+
+.edgar_mainNavLinks__1jDLd > li + li {
+  margin-left: 1rem;
+}
+
+.edgar_articleHeader__CsOrY {
+  text-align: center;
+}
+
+.edgar_articleHeader__CsOrY .edgar_address__2A74C {
+  font-weight: bold;
+}
+
+.edgar_articleHeader__CsOrY [datetime="2019-09-15"] {
+  border: 1px solid red;
+  display: inline-block;
+  padding: 3rem;
+}
+
+.edgar_articleTitle__3EObb {
+  font-size: 5em;
+}
+
+.edgar_articleSection__1C9lZ {
+  border-bottom: 5px double purple;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.edgar_figureWrapper__1vjg4 {
+  float: left;
+  width: 75%;
+}
+
+.edgar_poePhotoWrapper__2BSab {
+  border: 10px outset purple;
+  /* border-radius: 10rem; */
+  float: left;
+  margin-left: 0;
+  width: 200px;
+}
+
+.edgar_poePhoto__1qo_O {
+  border-radius: 10rem;
+  display: block;
+}
+
+.edgar_poePhotoWrapper__2BSab.edgar_photoRelative__2bddm {
+  position: relative;
+}
+
+.edgar_poePhotoCaption__1u4pE {
+  background-color: lightyellow;
+  font-style: italic;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+
+.edgar_poePhotoWrapper__2BSab:hover .edgar_poePhotoCaption__1u4pE {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.edgar_writingSection__3ohLS {
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.edgar_writingSection__3ohLS + .edgar_writingSection__3ohLS {
+  border-top: 1px dashed purple;
+}
+
+.edgar_articleTable__315KH {
+  border-collapse: collapse;
+  border: 3px dotted #ccc;
+  font-family: monospace;
+}
+
+.edgar_articleTable__315KH caption {
+  display: none;
+}
+
+.edgar_articleTable__315KH th,
+.edgar_articleTable__315KH td {
+  border: 3px dotted #ccc;
+  padding: 2rem;
+}
+
+.edgar_articleTable__315KH th {
+  color: purple;
+}
+
+.edgar_articleTable__315KH .edgar_workTitle__AsUOr {
+  color: red;
+}
+
+.edgar_signupForm__8g-_C {
+  background: rgba(127, 14, 126, 0.1);
+  padding: 2rem;
+  position: relative;
+}
+
+.edgar_signupFormField__1ZZP1 {
+  border: 0;
+  display: inline-block;
+  padding: 0 0 2rem;
+  vertical-align: top;
+}
+
+.edgar_signupFormField__1ZZP1 > div {
+  color: orange;
+  border: 1px solid orange;
+  margin-bottom: 1rem;
+}
+.edgar_signupFormField__1ZZP1 > div:first-child {
+  color: inherit;
+  border-color: inherit;
+}
+.edgar_signupFormField__1ZZP1 > div:nth-of-type(2) {
+  color: initial;
+  border-color: initial;
+}
+.edgar_signupFormField__1ZZP1 > div:last-child {
+  color: unset;
+  border-color: unset;
+}
+
+.edgar_signupForm__8g-_C legend {
+  font-family: "UnifrakturMaguntia", cursive;
+}
+
+.edgar_signupFormField__1ZZP1 label {
+  display: block;
+  margin-top: 1rem;
+  font-family: "Rowdies Light", serif;
+}
+.edgar_signupFormField__1ZZP1 .edgar_age__1Wwo2 .edgar_labelWrapper__2BRd- {
+  display: inline-block;
+}
+
+.edgar_signupFormField__1ZZP1 .edgar_age__1Wwo2 .edgar_labelWrapper__2BRd- ~ .edgar_labelWrapper__2BRd- {
+  background: purple;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.edgar_signupFormField__1ZZP1 .edgar_age__1Wwo2 .edgar_labelWrapper__2BRd-:nth-of-type(1) + .edgar_labelWrapper__2BRd- {
+  background: #f00;
+}
+
+.edgar_signupFormField__1ZZP1 .edgar_age__1Wwo2 .edgar_labelWrapper__2BRd-:last-child {
+  background: #060;
+}
+
+.edgar_signupForm__8g-_C input[type="text"],
+.edgar_signupForm__8g-_C input[type="tel"],
+.edgar_signupForm__8g-_C select {
+  display: block;
+}
+
+.edgar_signupForm__8g-_C div > input[type="radio"] {
+  margin-right: 1rem;
+}
+
+.edgar_signupForm__8g-_C input[type="submit"] {
+  background: purple;
+  border: 0;
+  color: #fff;
+  font-size: 3rem;
+  padding: 0.5em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-transform: uppercase;
+}
+
+.edgar_signupForm__8g-_C .edgar_favoriteWork__Vm-YH option:first-child {
+  background: purple;
+  color: #fff;
+}
+
+.edgar_pageFooter__2EdCb {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.edgar_pageFooter__2EdCb li {
+  background: magenta;
+}
+
+.edgar_pageFooter__2EdCb li + li {
+  margin-top: 1rem;
+  color: inherit;
+}
+
+.edgar_pageFooter__2EdCb ul {
+  list-style-position: inside;
+  list-style-image: url(/static/media/raven.94d6cfdd.svg);
+}
+.edgar_pageFooter__2EdCb ol {
+  list-style-position: outside;
+}
+
+.edgar_pageFooter__2EdCb ol li:first-child {
+  margin-top: 100rem;
+}
+.edgar_pageFooter__2EdCb li:first-child {
+  margin-top: 3rem !important;
+}
+
+.edgar_legal__2NYKD {
+  display: block;
+  font-family: "Rowdies Regular", serif;
+}
+
+.edgar_copyright__1ZKuV {
+  font-style: oblique;
+}
+
+.edgar_trademark__31ooy {
+  font-style: italic;
+}
+</style><style>/* Webfonts ==================================================================== */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"),
+    url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff)
+      format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Lato Hairline"), local("Lato-Hairline"),
+    url(http://themes.googleusercontent.com/static/fonts/lato/v6/boeCNmOCCh-EWFLSfVffDg.woff)
+      format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato Light"), local("Lato-Light"),
+    url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff)
+      format("woff");
+}
+
+/* Base styles ============================================================== */
+.Grid_flex__bfrw0 { display:flex; }
+
+.Grid_mainContainer__3YYfL {
+  font: 100%/1 "Lato", "Trebuchet MS", Helvetica, Arial, sans-serif;
+  color: #222;
+  position: relative;
+  min-height: 100%;
+}
+.Grid_flex__bfrw0 a {
+  text-decoration: none;
+}
+.Grid_flex__bfrw0 a:hover {
+  text-decoration: underline;
+}
+
+/* Containers =============================================================== */
+.Grid_sidebar__T-brN,
+.Grid_demo__3WUl9 {
+  opacity: 0;
+  transition: opacity 0.5s;
+  height: 100%;
+}
+.Grid_sidebar__T-brN,
+.Grid_demo__3WUl9 {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.Grid_sidebar__T-brN {
+  display: flex;
+  -webkit-user-select: none;
+          user-select: none;
+  position: relative;
+  z-index: 1000; /* Sometimes the demo can get a little out of control. Make sure the sidebar is always visible */
+  flex-direction: column;
+  width: 20rem;
+  background: whitesmoke;
+}
+.Grid_demo__3WUl9 {
+    overflow: auto;
+    margin: 0;
+}
+
+.Grid_gridContainer__2Kf64 {
+  flex: 1 1;
+  padding: 0.5rem;
+  display: grid;
+}
+.Grid_gridItem__2zqoI {
+  border-radius: 0.25rem;
+  margin:.25rem;
+  font-size:1.5em;
+  padding:1rem 1.5rem;
+}
+.Grid_gridItem__2zqoI.Grid_selected__2Tj_G {
+  box-shadow: inset 0px 0px 7rem #777;
+}
+
+.Grid_gridItem__2zqoI:focus { outline:0; color:rgba(0,0,0,.4); animation:Grid_shake__p8GuR .25s infinite; }
+@keyframes Grid_shake__p8GuR { 25%{ transform:rotate(-1deg); } 50%{ transform:translateY(-1px); } 75%{ transform:rotate(2deg); } }
+
+
+
+/* Controls (menu.controls) ================================================= */
+.Grid_controls__1H7Ps {
+  flex: 1 1;
+}
+.Grid_controls__1H7Ps {
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.Grid_controlSection__2TgNf {
+  justify-content: flex-end;
+  flex-grow: 1;
+  padding: 1rem;
+  border-top: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+}
+
+.Grid_inputContainer__1Ptue {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+}
+
+.Grid_inputContainer__1Ptue input {
+   width: 50%;
+}
+
+.Grid_inputContainer__1Ptue input + input {
+  margin-top: 1rem;
+}
+
+.Grid_controls__1H7Ps:hover .Grid_indiv-controls__3JB6D {
+  background: #e1e1e1;
+}
+
+.Grid_controls__1H7Ps code {
+  display: block;
+  text-align: right;
+  align-self: center;
+  font-size: 1rem;
+  transition: opacity 0.5s;
+}
+.Grid_controls__1H7Ps code + code {
+  padding-top: 1rem;
+}
+.Grid_minimized__13PYm .Grid_controls__1H7Ps code {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.Grid_controls__1H7Ps select,
+.Grid_controls__1H7Ps input,
+.Grid_count-control__1hw40 {
+  display: inline-block;
+  font: 1.1rem/1 monospace;
+  background: #e1e1e1;
+  border-radius: 0.25rem;
+  border: 0;
+  text-align: center;
+  padding: 0.375rem;
+  transition: 0.25s;
+}
+.Grid_controls__1H7Ps select {
+  font-size: 0.9rem;
+  width: 8rem;
+}
+
+select:hover,
+input:hover,
+.Grid_count-control__1hw40:hover {
+  background: #ddd;
+}
+select:focus,
+input:focus {
+  background: #ffb;
+  outline: 0;
+}
+.Grid_small__3YYUb {
+  width: 3rem;
+}
+.Grid_mid__rDiQc {
+  width: 5rem;
+}
+
+.Grid_count-control__1hw40 {
+  cursor: pointer;
+  font-weight: bold;
+}
+.Grid_count-control__1hw40:active {
+  background: #ffb;
+}
+
+.Grid_tip__GKu3z {
+  position: relative;
+}
+.Grid_tip__GKu3z:hover:before,
+.Grid_tip__GKu3z:hover:after {
+  display: block;
+  position: absolute;
+  background: #555;
+  text-align: center;
+  z-index: 1000;
+}
+
+.Grid_tip__GKu3z:hover:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  top: 27px;
+  left: 22px;
+}
+
+.Grid_tip__GKu3z:hover:after {
+  content: attr(data-tip);
+  color: whitesmoke;
+  top: 31px;
+  left: 0;
+  width: 110px;
+  font-size: 14px;
+  padding: 10px;
+  line-height: 1.36;
+  box-sizing: border-box;
+}
+
+.Grid_largeTip__1iCB5:hover:before {
+  top: -11px;
+  left: 60px;
+}
+
+.Grid_largeTip__1iCB5:hover:after {
+  top: -65px;
+  width: 300px;
+}
+.Grid_largeTipBottom__1Txnf:hover:before {
+  top: auto;
+  bottom: -11px;
+  left: 60px;
+}
+
+.Grid_largeTipBottom__1Txnf:hover:after {
+  top: auto;
+  bottom: -46px;
+  width: 300px;
+}
+
+.Grid_flexBasisTip__19viV:hover:after {
+  width: 260px;
+  left: -150px;
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div><h1>The Statue of Liberty's torch heads to new museum </h1><address>by Kate Farley<a href="mailto:kate.farley@nytimes.com">(kate.farley@nytimes.com)</a><br><time datetime="2018-09-22">November 22, 2018</time></address><br><span>The Statue of Liberty's original torch is getting a new home.</span><p>Made of copper and gold so that it would shine bright, the first torch took a beating from the weather and was replaced by a replica in 1984. It's been stored in the statue's pedestal ever since.</p><p>But visitors will be able to see the original 3,600-pound torch in all its glory at a new Statue of Liberty Museum, which will open on Liberty Island in May 2019. The torch was transported there by truck last week, along with a replica model of Lady Liberty's face.</p><p><q>Although it is not one of the most difficult things we have ever moved,</q> says Douglas Phelps, who oversaw the relocation of the torch, "it is certainly the most important."</p><h1>The history of the Statue of Liberty</h1><p>Not only is the Statue of Liberty the symbol of New York City, she is also a UNESCO World Heritage site May under the designation of <i>Outstanding Universal Value</i>.</p><p>Her full name is Liberty Enlightening the World, and she was designed by Frederic Auguste Bartholdi and built by Gustave Eiffel -- yes, the same guy who built Paris's Eiffel Tower.</p><p>Lady Liberty was a gift from France to the United States to celebrate the centennial of their nation's independence -- although, somewhat awkwardly, she arrived a decade too late. Nevertheless, President Grover Cleveland formally unveiled her in 1886.</p><p>Since then, the statue has served as a symbol of hope and possibility for many people who entered the United States as immigrants via neighboring Ellis Island.</p><p><q>The original torch is a beautiful object of art and exemplifies the American ideals of freedom and democracy,</q> says John Piltzecker, superintendent of the Statue of Liberty National Monument. That symbolic spirit inspired the decision to inscribe these famous lines on the statue's pedestal:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;Give me your tired, your poor <br> &nbsp;&nbsp;&nbsp;&nbsp;Your huddled masses yearning to breathe free.<br><br> </p><span>In <time>2017</time>, nearly 4.5 million people visited Liberty Island.</span><p>When completed, the Statue of Liberty Museum will be 26,000 square feet of history, inspiration and deeper analysis of the statue's symbolism both in the US and around the world.</p><p>The inspiration gallery, which is where the torch will live, will have floor-to-ceiling glass windows looking out at Lower Manhattan, including the World Trade Center.</p><h1>Some facts about the Statue of Liberty</h1>* Total overall height from the base of the pedestal foundation to the tip of the torch is <strong>305 feet, 6 inches</strong><br>* Height of the Statue from her heel to the top of her head is 111 feet, 6 inches<br>* The Statue has a <strong>35-foot</strong> waistline<br>* Total weight of the Statue of Liberty is <strong>225 tons (or 450,000 pounds)</strong></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="/static/js/bundle.js"></script><script src="/static/js/1.chunk.js"></script><script src="/static/js/main.chunk.js"></script><script src="/main.447fe13d658d1d9b2409.hot-update.js"></script>
+
+</body></html>
