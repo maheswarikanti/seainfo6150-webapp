@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { Switch, Route } from "react-router-dom";
-import Article from "./Article/Article";
+import ArticleTextToggleButton from "./ArticleTextToggleButton/ArticleTextToggleButton.jsx";
+import ArticleListItem from "./ArticleListItem/ArticleListItem";
 import DynamicArticle from "./DynamicArticle/DynamicArticle";
 import { isEmpty } from "lodash";
 
 function App() {
-  const [fetchedData, setFetchedData] = useState({});
+  const [fetchedData, setFetchedData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +29,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route>
-          <DynamicArticle article={Object.values(fetchedData)[1]} />
+          <ArticleListItem article={Object.values(fetchedData)} />
         </Route>
       </Switch>
     </div>
