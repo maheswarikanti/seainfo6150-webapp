@@ -19,6 +19,7 @@ const ArticleListItem = (props) => {
             <div className ={styles.box}>
             <ArticleList article={art} />
             <ArticleTextToggleButton article={art} />
+              <br/>
             </div>
             <b/>
           </Route>

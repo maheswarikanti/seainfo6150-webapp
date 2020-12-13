@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Button, makeStyles } from "@material-ui/core";
+import {  makeStyles } from "@material-ui/core";
 import styles from "./ArticleTextToggleButton.module.css";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -13,11 +14,12 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
+const Button =  styles.button;
   
 const ArticleTextToggleButton = (props) => {
     let btn = styles.button;
     const classes = useStyles();
-    const [isHidden, setIsHidden] = useState(true);
+    const [isHidden, setIsHidden] = useState(false);
 
     function showdata() {
         if ( isHidden ) {
@@ -32,9 +34,9 @@ const ArticleTextToggleButton = (props) => {
     <section>
              <div>{showdata()}
             </div>
-            <div className={styles.button}  onClick={() => setIsHidden(!isHidden)}>
+            <Button className={styles.button}  onClick={() => setIsHidden(!isHidden)}>
             {isHidden ? "Show Less" : "Show More"}
-      </div>
+      </Button>
       <br/>
     </section>
   );
