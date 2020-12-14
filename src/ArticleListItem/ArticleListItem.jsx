@@ -1,40 +1,36 @@
 import React, {useEffect, useState} from "react";
 import { Switch, Route } from "react-router-dom";
 import ArticleList from "../Article/ArticleList";
-import ArticleTextToggleButton from "../ArticleTextToggleButton/ArticleTextToggleButton";
-import HTMLText from "../HTMLText/HTMLText";  
 import styles from "./ArticleListItem.module.css";
 
 const ArticleListItem = (props) => {
 
   let displayContent;
-  let art = props.article;
+  let arts = props.article;
 
-  if (art.length) {
+  if (arts.length) {
     displayContent = (
-      <ul >
-        {art.map((art) => (
+      <div  className={styles.wrapper}>
+        {arts.map((art) => (
         <Switch>
           <Route>
             <div className ={styles.box}>
-            <ArticleList article={art} />
-            <ArticleTextToggleButton article={art} />
-              <br/>
+             <ArticleList article={art} />
+              <b/>
             </div>
-            <b/>
           </Route>
         </Switch>
         ))}
-      </ul>
+      </div>
     ); 
   } else {
     displayContent = <div>You have no data!</div>;
   }
 
   return (
-    <section>
+    <div>
       {displayContent}
-    </section>
+    </div>
   );
 };
   

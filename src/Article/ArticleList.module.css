@@ -3,3 +3,9 @@ div.boldred {
     font-weight: bold;
     text-decoration: underline;
 }
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    }

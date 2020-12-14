@@ -32,11 +32,14 @@ const ArticleTextToggleButton = (props) => {
 
   return (
     <section>
-             <div>{showdata()}
-            </div>
+        <div>
+          <div>{showdata()}</div>
+          <div className={styles.center}>
             <Button className={styles.button}  onClick={() => setIsHidden(!isHidden)}>
             {isHidden ? "Show Less" : "Show More"}
-      </Button>
+            </Button>
+          </div>
+        </div>  
       <br/>
     </section>
   );

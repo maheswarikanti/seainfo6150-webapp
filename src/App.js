@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
 import { Switch, Route } from "react-router-dom";
-import ArticleTextToggleButton from "./ArticleTextToggleButton/ArticleTextToggleButton.jsx";
 import ArticleListItem from "./ArticleListItem/ArticleListItem";
 import DynamicArticle from "./DynamicArticle/DynamicArticle";
 import { isEmpty } from "lodash";
+import { StylesProvider } from "@material-ui/core";
+import styles from "./App.css";
 
 function App() {
   const [fetchedData, setFetchedData] = useState([]);
@@ -26,7 +27,7 @@ function App() {
 
   console.log(isEmpty(fetchedData));
   return isEmpty(fetchedData) ? null : (
-    <div className="App">
+    <div className={styles.App}>
       <Switch>
         <Route>
           <ArticleListItem article={Object.values(fetchedData)} />
