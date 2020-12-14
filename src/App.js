@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { Switch, Route } from "react-router-dom";
-import Article from "./Article/Article";
-import DynamicArticle from "./DynamicArticle/DynamicArticle";
+import ArticleListItem from "./ArticleListItem/ArticleListItem.jsx";
 import { isEmpty } from "lodash";
+import styles from "./App.css";
 
 function App() {
-  const [fetchedData, setFetchedData] = useState({});
+  const [fetchedData, setFetchedData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,10 +25,10 @@ function App() {
 
   console.log(isEmpty(fetchedData));
   return isEmpty(fetchedData) ? null : (
-    <div className="App">
+    <div className={styles.App}>
       <Switch>
         <Route>
-          <DynamicArticle article={Object.values(fetchedData)[1]} />
+          <ArticleListItem article={Object.values(fetchedData)} />
         </Route>
       </Switch>
     </div>
