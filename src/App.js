@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Switch, Route } from "react-router-dom";
-import ArticleListItem from "./ArticleListItem/ArticleListItem.jsx";
+import ArticleList from "./Article/ArticleList.jsx";
 import { isEmpty } from "lodash";
 import styles from "./App.css";
 
@@ -14,7 +14,6 @@ function App() {
         "http://demo1390455.mockable.io/articles"
       );
       const responseJson = await response.json();
-      console.log(responseJson)
       setFetchedData(responseJson);
     };
 
@@ -23,13 +22,13 @@ function App() {
     }
   }, [fetchedData]);
 
-  console.log(isEmpty(fetchedData));
   return isEmpty(fetchedData) ? null : (
     <div className={styles.App}>
       <Switch>
-        <Route>
+        <Route exact path="/articlelist"><ArticleList articles={Object.values(fetchedData)} /></Route>
+        {/* <Route>
           <ArticleListItem article={Object.values(fetchedData)} />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );
