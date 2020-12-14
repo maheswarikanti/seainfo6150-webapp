@@ -23,7 +23,7 @@ const ArticleTextToggleButton = (props) => {
 
     function showdata() {
         if ( isHidden ) {
-        return <div><div>{props.article.displayDate}</div>
+        return <div><div className={styles.textBold}>{props.article.displayDate}</div>
         <br/>
         <div>{props.article.shortText}</div>
         <br/></div>

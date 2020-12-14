@@ -1,4 +1,5 @@
 div.boldred {
     color: rgb(163, 73, 185);
     font-weight: bold;
+    text-decoration: underline;
 }
